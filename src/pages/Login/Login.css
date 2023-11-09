@@ -6,20 +6,6 @@
     overflow-x: hidden;
 }
 
-.loginHeaderBanner {
-    background-color: black;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    height: 100px;
-}
-
-.loginLogoContent {
-    width: 35%;
-    margin: 5% 0 5% 0;
-}
-
 .loginBody {
     height: 100%;
     background: linear-gradient(rgba(255, 255, 255, 0.1) 0%, rgb(0, 0, 0) 100%);
@@ -50,30 +36,6 @@
     margin-bottom: 5%;
 }
 
-.loginModalConnectWith {
-    border: 1px solid #727272;;
-    margin-bottom: 1%;
-    width: 40%;
-    padding: 1.5%;
-    border-radius: 500px;
-    display: flex;
-}
-
-.loginModalConnectWith:hover {
-    border-color: white;
-}
-
-.logalModalConnectWithTitle {
-    margin-left: 6%;
-    font-weight: bold;
-}
-
-.logoModalConnectWithIcon {
-    margin-left: 10%;
-    height: 20px !important;
-    width: 20px !important;
-}
-
 .loginModalHr {
     border-color: rgb(41, 41, 41);
     opacity: 0.5;
@@ -83,6 +45,10 @@
 .loginModalConnectToContainerInputs {
     display: flex;
     flex-direction: column;
+}
+
+.loginModalConnectToContainerInput {
+    width: 40%;
 }
 
 .loginModalConnectToContainerInputsTitle {
@@ -106,17 +72,6 @@
 
 .loginModalConnectToContainerInput:hover {
     border-color: var(--primary-text);
-}
-
-.loginModalConnectToContainerInputEyesIcon {
-    color: #727272;
-    position: relative;
-    left: 65%;
-    bottom: 40px;
-}
-
-.loginModalConnectToContainerInputEyesIcon:hover {
-    cursor: pointer;
 }
 
 .loginModalConnectToContainerRememberMe {
@@ -151,8 +106,8 @@
     margin: 5% 0 5% 0;
 }
 .loginModalConnectToForgetPasswordOnClick {
-    text-decoration: underline;
     cursor: pointer;
+    color: var(--primary-text);
 }
 
 .loginModalConnectToForgetPasswordOnClick:hover {
@@ -174,17 +129,6 @@
 /* MOBILE SOUS 768px */
 
 @media only screen and (max-width: 768px) {
-    .loginHeaderBanner {
-        margin-top: 3%;
-    }
-    .loginLogoContainer {
-        display: flex;
-        width: 100%;
-    }
-    .loginLogoContent {
-        width: 20%;
-        margin: 5% 0 5% 5%;
-    }
     .loginModalContainer {
         width: 100%;
         margin-top: 0;
@@ -194,18 +138,6 @@
         text-align: start;
         margin-left: 5%;
         margin-top: 2%;
-    }
-    .loginModalConnectWith {
-        width: 85%;
-        padding-left: 5%;
-        display: grid;
-        grid-template-columns: 25% 50%;
-    }
-    .logoModalConnectWithIcon {
-        margin: auto;
-    }
-    .logalModalConnectWithTitle {
-        text-align: center;
     }
     .loginModalConnectToContainerInputsTitle {
         margin-left: 5%;

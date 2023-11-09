@@ -1,32 +1,22 @@
 import React, {useCallback, useState} from 'react'
-import LogoSpotify from '../assets/logoSpotify.png'
 import './Login.css'
-import { FcGoogle } from "react-icons/fc";
-import { BsFacebook, BsApple, BsFillEyeSlashFill, BsFillEyeFill } from "react-icons/bs";
-import { SocialIcon } from 'react-social-icons'
 import {PiWarningCircleBold} from "react-icons/pi"
 import Switch from "react-switch";
+import {Link} from "react-router-dom";
+import HeaderBar from '../../components/HeaderBar/HeaderBar';
+import ConnectWith from '../../components/ConnectWith/ConnectWith';
+import Input from '../../components/Input/Input';
 
 const Login = () => {
     return (
         <div className='loginPageContainer'>
-            <Banner />
+            <HeaderBar />
             <div className='loginBody'>
                 <ConnectionModal />
             </div>
         </div>
     )
 }
-
-const Banner = () => {
-    return (
-        <div className='loginHeaderBanner'>
-            <div className='loginLogoContainer'>
-                <img className='loginLogoContent' src={LogoSpotify} alt="" />
-            </div>
-        </div>
-    )
-};
 
 const ConnectionModal = () => {
     const [error, setError] = useState({
@@ -43,9 +33,9 @@ const ConnectionModal = () => {
                 </div>
             }
             <div className="loginModalConnectWithContainer">
-                <ConnectWith name="Google"/>
-                <ConnectWith name="Facebook"/>
-                <ConnectWith name="Apple"/>
+                <ConnectWith name="Google" width={40}/>
+                <ConnectWith name="Facebook" width={40}/>
+                <ConnectWith name="Apple" width={40}/>
             </div>
             <hr className='loginModalHr'/>
             <ConnectTo error={error} setError={setError} />
@@ -54,25 +44,12 @@ const ConnectionModal = () => {
     )
 };
 
-const ConnectWith: React.FC<{ name: string }> = ({name}) => {
-    return (
-        <div className='loginModalConnectWith'>
-            {name === "Google" && <FcGoogle  className="logoModalConnectWithIcon"/>}
-            {name === "Facebook" && <SocialIcon network="facebook" className="logoModalConnectWithIcon"/>}
-            {name === "Apple" && <BsApple className="logoModalConnectWithIcon"/>}
-            <div className="logalModalConnectWithTitle">
-                Continuer avec {name}
-            </div>
-        </div>
-    )
-}
-
 type error = {
     status: Number | null,
     message: string | null,
 }
-const ConnectTo:  React.FC<{ error: error, setError: Function}>= ({error, setError}) => {
-    const [visible, setVisible] = useState(true);
+
+const ConnectTo = ({error, setError}: {error: error, setError: Function}) => {
     const [isChecked, setIsChecked] = useState(true);
     const [field, setField] = useState({
         email: '',
@@ -95,16 +72,8 @@ const ConnectTo:  React.FC<{ error: error, setError: Function}>= ({error, setErr
     return (
         <div className='loginModalConnectToContainer'>
             <div className='loginModalConnectToContainerInputs'>
-                <p className='loginModalConnectToContainerInputsTitle'>Adresse e-mail ou nom d'utilisateur</p>
-                <input type="text" className='loginModalConnectToContainerInput' placeholder="Adresse e-mail ou nom d'utilisateur" onChange={event => setField({email: event.target.value, password: field.password})}/>
-                <p className='loginModalConnectToContainerInputsTitle'>Mot de passe </p>
-                <input type={!visible ? "text" : "password"} className='loginModalConnectToContainerInput' placeholder='Mot de passe' onChange={event => setField({email: field.email, password: event.target.value})}/>
-                {
-                    visible ?
-                            <BsFillEyeSlashFill className='loginModalConnectToContainerInputEyesIcon' size={30} onClick={() => setVisible(!visible)}/>
-                        :
-                            <BsFillEyeFill  className='loginModalConnectToContainerInputEyesIcon' size={30} onClick={() => setVisible(!visible)}/>
-                }
+                <Input title={"Adresse e-mail ou nom d'utilisateur"} placeholder={"Adresse e-mail ou nom d'utilisateur"} onChange={setField} width={45} marginLeft={28}/>
+                <Input title={"Mot de passe"} placeholder={"Mot de passe"} onChange={setField} width={45} marginLeft={28} eyes={true}/>
             </div>
             <div className='loginModalConnectToContainerRememberMe'>
                 <Switch
@@ -124,7 +93,7 @@ const ConnectTo:  React.FC<{ error: error, setError: Function}>= ({error, setErr
                 Se Connecter
             </div>
             <p className='loginModalConnectToForgetPassword'><span className='loginModalConnectToForgetPasswordOnClick'>Mot de passe oublié ?</span></p>
-            <p className='loginModalConnectToNoAccount'>Vous n'avez pas de compte ? <span className='loginModalConnectToForgetPasswordOnClick'>Je n'ai pas Spotify</span></p>
+            <p className='loginModalConnectToNoAccount'>Vous n'avez pas de compte ? <Link className='loginModalConnectToForgetPasswordOnClick' to={"/signup"}>Je n'ai pas Spotify</Link></p>
         </div>
     )
 };
