@@ -1,0 +1,235 @@
+.loginPageContainer {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.loginHeaderBanner {
+    background-color: black;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    height: 100px;
+}
+
+.loginLogoContent {
+    width: 35%;
+    margin: 5% 0 5% 0;
+}
+
+.loginBody {
+    height: 100%;
+    background: linear-gradient(rgba(255, 255, 255, 0.1) 0%, rgb(0, 0, 0) 100%);
+    display: flex;
+    justify-content: center;
+}
+
+.loginModalContainer {
+    width: 90%;
+    height: 70%;
+    background-color: black;
+    margin-top: 2%;
+    max-width: 734px;
+}
+
+.loginModalTitle {
+    font-size: 3rem;
+    text-align: center;
+    width: 100%;
+    margin: 8% 0;
+}
+
+.loginModalConnectWithContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+.loginModalConnectWith {
+    border: 1px solid #727272;;
+    margin-bottom: 1%;
+    width: 40%;
+    padding: 1.5%;
+    border-radius: 500px;
+    display: flex;
+}
+
+.loginModalConnectWith:hover {
+    border-color: white;
+}
+
+.logalModalConnectWithTitle {
+    margin-left: 6%;
+    font-weight: bold;
+}
+
+.logoModalConnectWithIcon {
+    margin-left: 10%;
+    height: 20px !important;
+    width: 20px !important;
+}
+
+.loginModalHr {
+    border-color: rgb(41, 41, 41);
+    opacity: 0.5;
+    width: 70%;
+}
+
+.loginModalConnectToContainerInputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.loginModalConnectToContainerInputsTitle {
+    text-align: start;
+    margin-left: 30%;
+    font-weight: bold;
+    margin-bottom: 1.5%;
+}
+
+.loginModalConnectToContainerInput {
+    width: 40%;
+    height: 45px;
+    background-color: black;
+    border: 1px solid #727272;
+    margin-left: 30%;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.loginModalConnectToContainerInput:hover {
+    border-color: var(--primary-text);
+}
+
+.loginModalConnectToContainerInputEyesIcon {
+    color: #727272;
+    position: relative;
+    left: 65%;
+    bottom: 40px;
+}
+
+.loginModalConnectToContainerInputEyesIcon:hover {
+    cursor: pointer;
+}
+
+.loginModalConnectToContainerRememberMe {
+    display: flex;
+    flex-direction: row;
+    gap: 1%;
+    margin: none;
+    text-align: start;
+    margin: 0 0 0 30%;
+    align-items: center;
+    font-size: 85%;
+}
+
+.loginModalConnectToButtonConnect {
+    margin: 5% 0 0 30%;
+    background-color: var(--primary-color);
+    color: black;
+    width: 42%;
+    height: 45px;
+    border-radius: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.loginModalConnectToButtonConnect:hover {
+    transform: scale(1.05);
+}
+
+.loginModalConnectToForgetPassword {
+    margin: 5% 0 5% 0;
+}
+.loginModalConnectToForgetPasswordOnClick {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.loginModalConnectToForgetPasswordOnClick:hover {
+    color: var(--primary-color);
+}
+
+.loginModalErrorContainer {
+    color: var(--primary-text);
+    background-color: red;
+    margin: 0 5% 2.5% 5%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 3%;
+    gap: 2%;
+}
+
+/* MOBILE SOUS 768px */
+
+@media only screen and (max-width: 768px) {
+    .loginHeaderBanner {
+        margin-top: 3%;
+    }
+    .loginLogoContainer {
+        display: flex;
+        width: 100%;
+    }
+    .loginLogoContent {
+        width: 20%;
+        margin: 5% 0 5% 5%;
+    }
+    .loginModalContainer {
+        width: 100%;
+        margin-top: 0;
+    }
+    .loginModalTitle {
+        font-size: 2rem;
+        text-align: start;
+        margin-left: 5%;
+        margin-top: 2%;
+    }
+    .loginModalConnectWith {
+        width: 85%;
+        padding-left: 5%;
+        display: grid;
+        grid-template-columns: 25% 50%;
+    }
+    .logoModalConnectWithIcon {
+        margin: auto;
+    }
+    .logalModalConnectWithTitle {
+        text-align: center;
+    }
+    .loginModalConnectToContainerInputsTitle {
+        margin-left: 5%;
+    }
+    .loginModalConnectToContainerInput {
+        margin-left: 5%;
+        width: 85%;
+    }
+    .loginModalConnectToContainerRememberMe {
+        margin-left: 5%;
+    }
+    .loginModalConnectToButtonConnect {
+        margin-left: 5%;
+        width: 90%;
+    }
+    .loginModalConnectToNoAccount {
+        display: flex;
+        flex-direction: column;
+        gap: 2%;
+    }
+    .loginModalConnectToForgetPasswordOnClick {
+        margin-top: 1%;
+    }
+    .loginModalConnectToContainerInputEyesIcon {
+        left: 85%;
+    }
+}
