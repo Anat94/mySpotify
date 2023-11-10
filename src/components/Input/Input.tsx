@@ -49,7 +49,7 @@ const Input = ({
         type={eyes && visible ? 'password' : 'text'}
         className={styles.input}
         placeholder={placeholder}
-        onChange={(event) => onChange({ email: event.target.value })}
+        onChange={(event) => onChange(event.target.value)}
       />
       {eyes && (
         <div

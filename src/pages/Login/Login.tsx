@@ -9,11 +9,8 @@ import Input from '../../components/Input/Input';
 
 const Login = () => {
     return (
-        <div className='loginPageContainer'>
-            <HeaderBar />
-            <div className='loginBody'>
-                <ConnectionModal />
-            </div>
+        <div className='loginBody'>
+            <ConnectionModal />
         </div>
     )
 }

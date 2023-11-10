@@ -9,7 +9,7 @@
     width: 90%;
     height: 45px;
     background-color: black;
-    border: 1px solid #727272;
+    border: 1px solid var(--second-color);
     border-radius: 4px;
     color: white;
     font-weight: bold;
@@ -25,10 +25,11 @@
 }
 
 .inputEyesIcon {
-    color: #727272;
+    color: var(--second-color);
     position: relative;
     left: 40%;
     bottom: 40px;
+    margin: 0;
 }
 
 .inputEyesIcon:hover {
