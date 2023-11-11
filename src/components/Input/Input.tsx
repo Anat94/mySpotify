@@ -4,6 +4,7 @@ import { BsFillEyeSlashFill, BsFillEyeFill } from 'react-icons/bs';
 
 const Input = ({
   title,
+  subtitle,
   placeholder,
   onChange,
   width = 100,
@@ -11,6 +12,7 @@ const Input = ({
   eyes = false,
 }: {
   title: string;
+  subtitle?: string;
   placeholder?: string;
   onChange: Function;
   width?: number;
@@ -43,8 +45,9 @@ const Input = ({
   const dynamicMarginLeft = windowWidth < 768 ? '2.5%' : `${marginLeft}%`;
 
   return (
-    <div style={{ width: dynamicWidth, marginLeft: dynamicMarginLeft }}>
+    <div  className={styles.inputContainer} style={{ width: dynamicWidth, marginLeft: dynamicMarginLeft }}>
       <p className={styles.inputTitle}>{title}</p>
+      <p className={styles.inputSubtitle}>{subtitle}</p>
       <input
         type={eyes && visible ? 'password' : 'text'}
         className={styles.input}

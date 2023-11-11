@@ -1,0 +1,60 @@
+.SignupTermOfUse {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 436px;
+}
+
+.SignupTermOfUseContent {
+    margin-left: 10%;
+    background: hsla(0,0%,100%,.13);
+    padding: 5% 2%;
+    border-radius: 5px;
+    margin-right: 10%;
+    display: flex;
+    flex-direction: row;
+    text-align: start;
+    align-items: flex-start;
+    gap: 2%;
+    max-width: 324px;
+}
+
+.SignupTermOfUseContentLabel {
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 10px;
+    margin-top: 0;
+    margin-right: 12%;
+}
+
+.SignupTermOfUseContentBottom {
+    margin-top: 10px;
+    text-align: start;
+    margin-left: 11%;
+    margin-right: 14%;
+    font-size: 14px;
+}
+
+.SignupTermOfUseContentBottomOnclick {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.signUpButtonConnect {
+    margin: 5% 12% 0 12%;
+    background-color: var(--primary-color);
+    color: black;
+    height: 45px;
+    border-radius: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.signUpButtonConnect:hover {
+    transform: scale(1.05);
+}

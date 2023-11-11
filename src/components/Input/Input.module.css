@@ -5,6 +5,15 @@
     padding-left: 12px;
 }
 
+.inputSubtitle {
+    text-align: start;
+    color: var(--second-color);
+    font-size: 15px;
+    margin-bottom: 2%;
+    margin-top: 0;
+    padding-left: 12px;
+}
+
 .input {
     width: 90%;
     height: 45px;
@@ -38,7 +47,15 @@
 
 
 @media only screen and (max-width: 768px) {
-    .input {
-        margin-right: 35px;
+    .inputContainer {
+        width: 80% !important;
+        margin-left: 10% !important;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .inputContainer {
+        width: 80% !important;
+        margin-left: 10% !important;
     }
 }

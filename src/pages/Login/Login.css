@@ -109,7 +109,7 @@
 
 .loginModalErrorContainer {
     color: var(--primary-text);
-    background-color: red;
+    background-color: var(--error-color);
     margin: 0 5% 2.5% 5%;
     height: 50px;
     display: flex;

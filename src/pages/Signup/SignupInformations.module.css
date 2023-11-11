@@ -1,0 +1,98 @@
+.SignupGetInformations {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 436px;
+}
+
+.signUpButtonConnect {
+    margin: 12% 12% 0 12%;
+    background-color: var(--primary-color);
+    color: black;
+    height: 45px;
+    border-radius: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.signUpButtonConnect:hover {
+    transform: scale(1.05);
+}
+
+.SignupInformationsTitle {
+    text-align: start;
+    font-weight: bold;
+    margin-bottom: 2%;
+    padding-left: 12px;
+    margin-left: 10%;
+}
+
+.SignupInformationsSubTitle {
+    text-align: start;
+    color: var(--second-color);
+    font-size: 15px;
+    margin-bottom: 2%;
+    margin-top: 0;
+    padding-left: 12px;
+    margin-left: 10%;
+}
+
+.SignupSelectGenre {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: 12%;
+    margin-right: 35%;
+}
+
+.SignupSelectGenreContent {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+.signUpError {
+    color: var(--error-color);
+    font-size: 13px;
+    margin-left: 12%;
+    display: flex;
+    gap: 3%;
+    align-items: center;
+    margin-top: 1%;
+}
+
+.input {
+    width: 90%;
+    height: 45px;
+    background-color: black;
+    border: 1px solid var(--second-color);
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.input:hover {
+    border-color: var(--primary-text);
+}
+
+.input::placeholder {
+    font-size: 15px;
+}
+
+.birthdayDivContainer {
+    display: flex;
+    gap: 2%;
+    margin-left: 12%;
+    margin-right: 12%;
+}
+
+@media only screen and (max-width: 480px) {
+    .SignupInformationsSubTitle {
+        margin-right: 10%;
+    }
+}

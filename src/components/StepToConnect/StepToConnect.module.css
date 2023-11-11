@@ -23,3 +23,10 @@
     font-weight: bold;
     font-size: 1rem;
 }
+
+@media only screen and (max-width: 480px) {
+    .SignupCreatePassword {
+        width: 75%;
+        margin-left: 12.5%;
+    }
+}

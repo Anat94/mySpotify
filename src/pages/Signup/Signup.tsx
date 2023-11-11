@@ -5,15 +5,11 @@ import ConnectWith from '../../components/ConnectWith/ConnectWith'
 import { Link } from 'react-router-dom'
 import { PiWarningCircleBold } from 'react-icons/pi'
 import { useNavigate } from "react-router-dom";
+import { tField } from '../../Types'
 
 type IUser = {
     status?: string | null,
     message: string | null
-}
-
-type tField= {
-    email: string,
-    password: string,
 }
 
 const Signup = ({field, setField} : {field: tField, setField: Function}) => {
@@ -37,7 +33,7 @@ const Signup = ({field, setField} : {field: tField, setField: Function}) => {
         <div className={styles.signUpPageContainer}>
             <div className={styles.signUpPageTitle}>Inscrivez-vous pour commencer à écouter</div>
             <div className={styles.signUpPageConnectionContainer}>
-                <Input title={"Adresse e-mail"}  onChange={(val : string) => setField({email: val})} placeholder={'nom@domaine.com'} />
+                <Input title={"Adresse e-mail"}  onChange={(val : string) => setField((prev: tField) => ({...prev, email: val}))} placeholder={'nom@domaine.com'} />
                 {
                     error.message != null &&
                         <div className={styles.signUpError}>
