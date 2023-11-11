@@ -33,7 +33,7 @@ const Signup = ({field, setField} : {field: tField, setField: Function}) => {
         <div className={styles.signUpPageContainer}>
             <div className={styles.signUpPageTitle}>Inscrivez-vous pour commencer à écouter</div>
             <div className={styles.signUpPageConnectionContainer}>
-                <Input title={"Adresse e-mail"}  onChange={(val : string) => setField((prev: tField) => ({...prev, email: val}))} placeholder={'nom@domaine.com'} />
+                <Input title={"Adresse e-mail"}  onChange={(val : string) => setField((prev: tField) => ({...prev, email: val}))} placeholder={'nom@domaine.com'}/>
                 {
                     error.message != null &&
                         <div className={styles.signUpError}>

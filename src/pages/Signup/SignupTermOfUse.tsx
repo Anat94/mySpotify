@@ -14,7 +14,7 @@ const SignupTermOfUse = ({field, setField}: {field: tField, setField: Function})
 
   return (
     <div className={styles.SignupTermOfUse}>
-        <StepToConnect step={2} title={"Conditions d'utilisation"} progress={100} goBack={"/signup/step-2"}/>
+        <StepToConnect step={3} title={"Conditions d'utilisation"} progress={100} goBack={"/signup/step-2"}/>
         <label className={styles.SignupTermOfUseContent} style={{marginTop: "10%"}}>
             <input
                 className={styles.SignupTermOfUseContentInput}
