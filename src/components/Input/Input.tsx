@@ -43,7 +43,6 @@ const Input = ({
   const { width: windowWidth } = windowDimensions;
   const dynamicWidth = windowWidth < 768 ? '100%' : `${width}%`;
   const dynamicMarginLeft = windowWidth < 768 ? '2.5%' : `${marginLeft}%`;
-
   return (
     <div  className={styles.inputContainer} style={{ width: dynamicWidth, marginLeft: dynamicMarginLeft }}>
       <p className={styles.inputTitle}>{title}</p>

@@ -37,9 +37,7 @@ const SignupInformations = ({field, setField}: {field: tField, setField: Functio
   const [errorGender, setErrorGender] = useState("")
 
   const onClickToConnect = useCallback(() => {
-    console.log({field})
     if (!field.name) {
-      console.log(field.name)
       setErrorName("Saisissez un nom pour votre profil.")
     }
     if (field.birthday.length > 0) {
@@ -120,8 +118,6 @@ const GetBirthdayDate = ({setBirthdayDate, errorBirthday}: {setBirthdayDate: Fun
     setBirthdayDate(dateOfBirth);
   }, [day, month, year]);
 
-  console.log(`${day}/${month}/${year}`.length > 9)
-  console.log(`${day}/${month}/${year}`)
   return (
     <>
       <p className={styles.SignupInformationsTitle}>Date de naissance</p>

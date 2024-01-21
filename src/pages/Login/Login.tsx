@@ -3,7 +3,6 @@ import './Login.css'
 import {PiWarningCircleBold} from "react-icons/pi"
 import Switch from "react-switch";
 import {Link} from "react-router-dom";
-import HeaderBar from '../../components/HeaderBar/HeaderBar';
 import ConnectWith from '../../components/ConnectWith/ConnectWith';
 import Input from '../../components/Input/Input';
 
@@ -61,16 +60,22 @@ const ConnectTo = ({error, setError}: {error: error, setError: Function}) => {
         if (!field.email) {
             setError({message:"Veuillez saisir votre nom d'utilisateur Spotify ou votre adresse e-mail."})
         } else if (!field.password) {
-            console.log("cc12");
             setError({message:"Entrez votre mot de passe."})
         }
         //make request to connect
     }, [field, setError]);
+
+    const handleEmailChange = (value: string) => {
+        setField(prevState => ({ ...prevState, email: value }));
+    };
+    const handlePasswordChange = (value: string) => {
+        setField(prevState => ({ ...prevState, password: value }));
+    };
     return (
         <div className='loginModalConnectToContainer'>
             <div className='loginModalConnectToContainerInputs'>
-                <Input title={"Adresse e-mail ou nom d'utilisateur"} placeholder={"Adresse e-mail ou nom d'utilisateur"} onChange={setField} width={45} marginLeft={28}/>
-                <Input title={"Mot de passe"} placeholder={"Mot de passe"} onChange={setField} width={45} marginLeft={28} eyes={true}/>
+                <Input title={"Adresse e-mail ou nom d'utilisateur"} placeholder={"Adresse e-mail ou nom d'utilisateur"} onChange={handleEmailChange} width={45} marginLeft={28}/>
+                <Input title={"Mot de passe"} placeholder={"Mot de passe"} onChange={handlePasswordChange} width={45} marginLeft={28} eyes={true}/>
             </div>
             <div className='loginModalConnectToContainerRememberMe'>
                 <Switch

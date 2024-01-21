@@ -40,6 +40,7 @@ function App() {
     createRoutesFromElements(
       <>
         <>
+          <Route path="/" element={<DisplayWithHeader children={<Login />} />} />
           <Route path="/signin" element={<DisplayWithHeader children={<Login />} />} />
           <Route path="/signup" element={<DisplayWithHeader children={<Signup field={field} setField={setField}/>} />} />
           <Route path="/signup/step-1" element={<DisplayWithHeader children={<SignupCreatePassword field={field} setField={setField} />} />} />
