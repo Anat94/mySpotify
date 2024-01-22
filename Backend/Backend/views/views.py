@@ -4,7 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.hashers import make_password, check_password
 from Backend.models import Users
 import json
-# from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
+
 @csrf_exempt
 def index(request):
     return JsonResponse({"status": "ok"}, status=200)
@@ -16,7 +16,6 @@ def checkIfUserExists(email, password):
     if not usr:
         return False
     usr = usr.first()
-    print(check_password(password, usr.password))
     if check_password(password, usr.password) == True:
         return True
     return False
