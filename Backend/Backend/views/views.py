@@ -26,6 +26,8 @@ def signin(request):
         data = json.loads(request.body)
         email = data.get('email')
         password = data.get('password')
+        if not email or not password:
+            return JsonResponse({"status": "Invalid request"}, status=400)
         if checkIfUserExists(email, password):
             return JsonResponse({"status": "ok"}, status=200)
         else:
@@ -45,11 +47,15 @@ def checkIfEmailIsRegitered(email):
 def signup(request):
     if request.method == "POST":
         data = json.loads(request.body)
+        if not data:
+            return JsonResponse({"status": "Invalid request"}, status=400)
         email = data.get('email')
         password = data.get('password')
         name = data.get('name')
         birth_date = data.get('birth_date')
         gender = data.get('gender')
+        if not email or not password or not name or not birth_date or not gender:
+            return JsonResponse({"status": "Invalid request"}, status=400)
         birth_date = datetime.datetime.strptime(birth_date, "%d/%m/%Y").strftime("%Y-%m-%d")
         if checkIfUserExists(email, password):
             return JsonResponse({"status": "User already exists"}, status=409)
