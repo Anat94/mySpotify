@@ -36,12 +36,13 @@
 .inputEyesIcon {
     color: var(--second-color);
     position: relative;
-    left: 40%;
+    left: 83%;
     bottom: 40px;
     margin: 0;
+    width: 10%;
 }
 
-.inputEyesIcon:hover {
+.EyesIcon:hover {
     cursor: pointer;
 }
 

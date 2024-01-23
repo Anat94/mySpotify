@@ -84,6 +84,26 @@
     font-size: 15px;
 }
 
+.inputSelect {
+    -webkit-appearance: none;
+    appearance: none;
+    background: url("data:image/svg+xml;utf8,<svg fill='%23727272' height='30' viewBox='0 0 24 24' width='30' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>") no-repeat;
+    background-position: right 0px center;
+    background-size: 35px;
+    width: 90%;
+    height: 49px;
+    background-color: black;
+    border: 1px solid var(--second-color);
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.inputSelect:hover {
+    border-color: var(--primary-text);
+}
+
 .birthdayDivContainer {
     display: flex;
     gap: 2%;

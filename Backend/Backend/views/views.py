@@ -44,6 +44,20 @@ def checkIfEmailIsRegitered(email):
     return True
 
 @csrf_exempt
+def registerEmail(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        email = data.get('email')
+        if not email:
+            return JsonResponse({"status": "Invalid request"}, status=400)
+        if checkIfEmailIsRegitered(email):
+            return JsonResponse({"status": "Email already registered"}, status=409)
+        else:
+            return JsonResponse({"status": "ok"}, status=200)
+    else:
+        return JsonResponse({"status": "Invalid method"}, status=405)
+
+@csrf_exempt
 def signup(request):
     if request.method == "POST":
         data = json.loads(request.body)

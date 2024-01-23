@@ -56,9 +56,8 @@ const Input = ({
       {eyes && (
         <div
           className={styles.inputEyesIcon}
-          onClick={() => setVisible(!visible)}
         >
-          {visible ? <BsFillEyeSlashFill size={30} /> : <BsFillEyeFill size={30} />}
+          {visible ? <BsFillEyeSlashFill className={styles.EyesIcon} size={30} onClick={() => setVisible(!visible)}/> : <BsFillEyeFill className={styles.EyesIcon} size={30} onClick={() => setVisible(!visible)}/>}
         </div>
       )}
     </div>

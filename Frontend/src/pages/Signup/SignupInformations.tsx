@@ -37,18 +37,20 @@ const SignupInformations = ({field, setField}: {field: tField, setField: Functio
   const [errorGender, setErrorGender] = useState("")
 
   const onClickToConnect = useCallback(() => {
+    setErrorBirthday("")
+    setErrorName("")
+    setErrorGender("")
     if (!field.name) {
       setErrorName("Saisissez un nom pour votre profil.")
     }
-    if (field.birthday.length > 0) {
+    if (field.birthday.length < 3) {
       setErrorBirthday("Veuillez saisir votre date de naissance.")
     }
     if (!field.gender) {
       setErrorGender('Sélectionnez votre sexe.')
     }
-    (field.name && field.birthday) ? navigate("/signup/step-3") : setField((prev: tField) => ({...prev, name:field.name, birthday: field.birthday, gender: field.gender}))
+    (field.name && field.birthday.length > 2 && field.gender) ? navigate("/signup/step-3") : setField((prev: tField) => ({...prev, name:field.name, birthday: field.birthday, gender: field.gender}))
   }, [navigate, setField, field]);
-
 
   return (
     <div className={styles.SignupGetInformations}>
@@ -130,12 +132,20 @@ const GetBirthdayDate = ({setBirthdayDate, errorBirthday}: {setBirthdayDate: Fun
           placeholder={"JJ"}
           onChange={(event) => onChange(event.target.value, "day")}
         />
-        <input
+        {/* <input
           type={"text"}
           className={styles.input}
           placeholder={"MM"}
           onChange={(event) => onChange(event.target.value, "month")}
-        />
+        /> */}
+        <select
+          className={styles.inputSelect}
+          placeholder={'MM'}
+        >
+          <option value="monday">Monday</option>
+          <option value="thuesday">Thueday</option>
+          <option value="wednesday">Wednesday</option>
+        </select>
         <input
           type={"text"}
           className={styles.input}

@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import { PiWarningCircleBold } from 'react-icons/pi'
 import { useNavigate } from "react-router-dom";
 import { tField } from '../../Types'
+import axios from 'axios'
 
 type IUser = {
     status?: string | null,
@@ -25,8 +26,18 @@ const Signup = ({field, setField} : {field: tField, setField: Function}) => {
             setError({message:"Cette adresse e-mail est non valide. Assurez-vous qu'elle respecte ce format : exemple@email.com"})
             return;
         }
-        return navigate("/signup/step-1")
-        //make request to connect
+        axios.post("http://localhost:8000/registerEmail", {
+            "email": field.email,
+        }).then((response) => {
+            if (response.status === 200) {
+                return navigate("/signup/step-1")
+            } else {
+                setError({message: response.data.status})
+            }
+        }).catch((error) => {
+            setError({message: "An error occured while trying to register your email: "+ error.response.data.status + " - status: " + error.response.status})
+        }
+        );
     }, [field, setError, navigate]);
 
     return (

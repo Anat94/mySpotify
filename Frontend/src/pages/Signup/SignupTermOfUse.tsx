@@ -3,14 +3,24 @@ import styles from "./SignupTermOfUse.module.css"
 import StepToConnect from "../../components/StepToConnect/StepToConnect"
 import { tField } from '../../Types';
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 const SignupTermOfUse = ({field, setField}: {field: tField, setField: Function}) => {
 
     const navigate = useNavigate();
     const onClickToConnect = useCallback(() => {
+        axios.post("http://127.0.0.1:8000/signup", {
+            "email": field.email,
+            "password": field.password,
+            "name": field.name,
+            "birth_date": field.birthday,
+            "gender": field.gender,
+        }).then((response) => {
             navigate("/");
-
-    }, [navigate]);
+        }).catch((error) => {
+            console.log(error);
+        });
+    }, [navigate, field]);
 
   return (
     <div className={styles.SignupTermOfUse}>

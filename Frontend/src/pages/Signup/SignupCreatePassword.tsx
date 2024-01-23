@@ -10,19 +10,20 @@ const SignupCreatePassword = ({field, setField}: {field: tField, setField: Funct
     const navigate = useNavigate();
     const [error, setError] = useState("")
     const onClickToConnect = useCallback(() => {
+        console.log(field);
         if (!field.password || field.password.length < 8) {
             setError("Le mot de passe doit comporter au moins 8 caractères.")
             return;
         }
         return navigate("/signup/step-2")
-    }, [navigate, field.password]);
+    }, [navigate, field]);
 
 
     const [windowDimensions, setWindowDimensions] = useState({
         width: window.innerWidth,
         height: window.innerHeight,
       });
-    
+
       useEffect(() => {
         function handleResize() {
           setWindowDimensions({
@@ -30,21 +31,21 @@ const SignupCreatePassword = ({field, setField}: {field: tField, setField: Funct
             height: window.innerHeight,
           });
         }
-    
+
         window.addEventListener('resize', handleResize);
-    
+
         return () => {
           window.removeEventListener('resize', handleResize);
         };
       }, []);
-    
+
       const { width: windowWidth } = windowDimensions;
 
     return (
         <div className={styles.SignupCreatePasswordContent}>
             <StepToConnect step={1} title={"Créez un password"} progress={33.33} goBack={"/signup"}/>
             <div style={{marginTop: "5%"}}>
-                <Input title={"Mot de passe"} onChange={(val : string) => setField({password: val})} width={80} marginLeft={10} eyes/>
+                <Input title={"Mot de passe"} onChange={(val : string) => setField({email: field.email, password: val})} width={80} marginLeft={10} eyes/>
                 {
                     error.length > 0 &&
                         <div className={styles.signUpError}>
