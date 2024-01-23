@@ -82,3 +82,8 @@ def signup(request):
         return JsonResponse({"status": "ok"}, status=201)
     else:
         return JsonResponse({"status": "Invalid method"}, status=405)
+
+@csrf_exempt
+def clearUsersTable(request):
+    Users.objects.all().delete()
+    return JsonResponse({"status": "ok"}, status=200)

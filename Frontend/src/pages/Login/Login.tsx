@@ -5,6 +5,7 @@ import Switch from "react-switch";
 import {Link} from "react-router-dom";
 import ConnectWith from '../../components/ConnectWith/ConnectWith';
 import Input from '../../components/Input/Input';
+import axios from 'axios';
 
 const Login = () => {
     return (
@@ -62,7 +63,14 @@ const ConnectTo = ({error, setError}: {error: error, setError: Function}) => {
         } else if (!field.password) {
             setError({message:"Entrez votre mot de passe."})
         }
-        //make request to connect
+        axios.post("http://localhost:8000/signin", {
+            email: field.email,
+            password: field.password,
+        }).then((res) => {
+            console.log(res);
+        }).catch((err) => {
+            console.log(err);
+        })
     }, [field, setError]);
 
     const handleEmailChange = (value: string) => {
